@@ -435,6 +435,10 @@ $$
 
 需要注意的是,印刷体表示向量用粗体,所以这里把`\vec`改成`\mathbf`会更好
 
+## NOTES
+
+我安装了Texlive之后与MathType冲突（但有人说是MathType与powerpoint冲突，这里我持怀疑态度），导致打不开Powerpoint，但能打开Excel和Word，经过知乎大佬指点，我把MathType卸载之后就可以了。
+
 ## 参考资料
 
 1.视频[LaTeX公式保姆级教程 (以及其中的各种细节)](https://www.bilibili.com/video/BV1no4y1U7At/)
