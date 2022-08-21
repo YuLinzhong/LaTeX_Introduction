@@ -437,7 +437,7 @@ $$
 
 ## NOTES
 
-我安装了Texlive之后与MathType冲突（但有人说是MathType与powerpoint冲突，这里我持怀疑态度），导致打不开Powerpoint，但能打开Excel和Word，经过知乎大佬指点，我把MathType卸载之后就可以了。
+我安装了Texlive之后与MathType冲突（但有人说是MathType与powerpoint冲突，这里我持怀疑态度），导致打不开Powerpoint，但能打开Excel和Word，经过知乎大佬指点，我把MathType卸载之后就可以了。删除Mathtype后，要清理其注册表里的残留，解决办法是在开始 ，运行，输入regedit ，打开注册表，编辑，查找，输入MathType AddIn，注意大小写，找到和MathType相关的项，删除，重新启动ppt即可。
 
 ## 参考资料
 
