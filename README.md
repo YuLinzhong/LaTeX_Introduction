@@ -4,7 +4,9 @@
 
 [TOC]
 
-## 希腊字母
+## 数学公式
+
+### 希腊字母
 
 $$
 \delta,\lambda\\
@@ -44,7 +46,7 @@ $$
 
 如果使用斜体大写希腊字母,再在大写希腊字母的**LaTeX**命令前加上**var**
 
-## 上下标
+### 上下标
 
 $$
 a^2,a_1\\
@@ -67,7 +69,7 @@ $$
 5. 要让rm只直立一个字母,用`{\rm A} B`
 6. 自然对数的底数e,虚数单位ij都应该用直立体
 
-## 分式与根式
+### 分式与根式
 
 $$
 \frac{1}{2},\frac 1 2,\\
@@ -84,7 +86,7 @@ $$
 3. 分式嵌套时,如果希望字体大小保持不变,用`dfrac`,如:`\frac {\dfrac 1 x + 1}{y + 1} `
 4. 平方根`\sqrt 2`,n次方根用`\sqrt[3]x` 
 
-## 普通运算符
+### 普通运算符
 
 $$
 +-\\
@@ -164,7 +166,7 @@ $$
 
 因为部分编辑器`\lim_{x \to 0} \frac {x}{\sin x}`极限条件可能会出问题,所以可以使用`\limits`强制让它在下方,如`\lim\limits_{x \to 0} \frac {x}{\sin x}`
 
-## 大型运算符
+### 大型运算符
 
 $$
 \sum,\prod\\
@@ -218,7 +220,7 @@ a\qquad a
 
 
 
-## 标注符号
+### 标注符号
 
 $$
 \vec x,\overrightarrow {AB}\\
@@ -228,7 +230,7 @@ $$
 1. 向量`\vec`,多个字母的向量`\overrightarrow`
 2. 模长`\bar`,多个字母的模长`\overline`
 
-## 箭头
+### 箭头
 
 $$
 \leftarrow,\Rightarrow,\Leftrightarrow,\longleftarrow
@@ -240,7 +242,7 @@ $$
 
 3.长箭头`\longleftarrow`
 
-## 括号与定界符
+### 括号与定界符
 
 $$
 ([])\{ \}\\
@@ -261,7 +263,7 @@ $$
 
 
 
-## 多行公式
+### 多行公式
 
 $$
 \begin{align}
@@ -284,7 +286,7 @@ a&=b+c+d\\
 1. 左对齐`\begin{align}` `\end{align}`
 2. `&`(ampersand)表示在括号处对齐
 
-## 大括号
+### 大括号
 
 $$
 f(x)=
@@ -299,7 +301,7 @@ $$
 
 
 
-## 矩阵
+### 矩阵
 
 $$
 \begin{matrix}
@@ -370,7 +372,7 @@ $$
 1. 粗体表示矩阵,`\bf`(bold face,粗体)
 2. 转置符号要用直立体
 
-## 实战演练
+### 实战演练
 
 $$
 f(x) = \frac 1 {\sqrt{2\pi} \sigma} {\rm e} ^ {-\frac {(x-\mu)^2}{2\sigma ^ 2}}\\
@@ -435,6 +437,66 @@ $$
 
 需要注意的是,印刷体表示向量用粗体,所以这里把`\vec`改成`\mathbf`会更好
 
+## 文档排版
+
+### 段落 换行 换页
+
+1. 空一行表示另起段落
+2. ` \\` 表示另起一行
+3. `\newpage` 表示换页
+
+### 章节
+
+1. 一级标题 `\section{...}`
+2. 二级标题 `\subsection{...}`
+3. 三级标题 `\subsubsection{...}`
+4. 四级标题 `\paragraph{...}` (尽量不用)
+5. 不带标号的标题在后面加 `*` , 如 `\section*{...}`
+6. 目录 `\tableofcontents`
+7. 将无序号一级标题加入目录 `\addcontentsline{toc}{section}{...}`
+
+### 有序列表和无序列表
+
+1. 有序列表 `\begin{enumerate}` `\end{enumerate}`
+2. 无序列表 `\begin{itemize}` `\end{itemize}`
+
+### 代码环境
+
+1. 行内代码环境 `\verb|...|` 
+2. 行间代码环境 `\begin{verbatim}` `\end{verbatim}`
+
+### 插入图片
+
+1. 导入宏包 `\usepackage{graphicx}`
+2. 代码块 `figure`
+
+```latex
+\begin{figure}[htbp]
+    \centering%居中
+    \includegraphics[width=\textwidth]{picture/}%设置width为图片宽度的多少倍,设置picture路径
+    \caption{}%图片标题
+    \label{}%设置标签的名字
+\end{figure}
+```
+
+3. 引用标签 `\ref{标签的名字}`
+
+### 插入表格
+
+```latex
+\begin{table}[htbp]
+    \centering%表格居中
+    \caption{caption}
+        \begin{tabular}{c|c}%用l指定左对齐，用c指定居中对齐，用r指定右对齐。使用|来产生表格竖线。用两个竖线|符号，产生双竖线。
+        \hline%画横线,可以使用\hilne命令产生横线。
+        column1 & column2%不同列之间用&符号分割。用\\结束这一行，并产生新的一行。
+        \end{tabular}
+    \label{label}
+\end{table}
+```
+
+还可以使用 `tablesgenerator.com` 可视化编程
+
 ## NOTES
 
 我安装了Texlive之后与MathType冲突（但有人说是MathType与powerpoint冲突，这里我持怀疑态度），导致打不开Powerpoint，但能打开Excel和Word，经过知乎大佬指点，我把MathType卸载之后就可以了。删除Mathtype后，要清理其注册表里的残留，解决办法是在开始 ，运行，输入regedit ，打开注册表，编辑，查找，输入MathType AddIn，注意大小写，找到和MathType相关的项，删除，重新启动ppt即可。
@@ -444,5 +506,3 @@ $$
 1.视频[LaTeX公式保姆级教程 (以及其中的各种细节)](https://www.bilibili.com/video/BV1no4y1U7At/)
 
 2.文件[latex中文手册](https://c7f49cfdf594b0ba.oss-cn-hangzhou.aliyuncs.com/latex%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C.pdf)
-
-# LaTeX_Introduction
